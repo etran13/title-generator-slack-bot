@@ -1,19 +1,20 @@
 import datetime
 
-def getInput(): 
-    "Takes input from user"
-    name = input("Enter LastNameFirstName: ")
-    key = input("Enter a for LOOP or b for LPC: ")
+def makeTitle(name, tutor, key): 
+    "Takes input from user and returns the formatted title"
+    #name = input("Enter LastNameFirstName: ")
+    #key = input("Enter a for LOOP or b for LPC: ")
     if key == "a":
         location = "LOOP"
+    elif key == "b":
+        location == "LPC"
     else:
-        location = "LPC"
-    return format(name, getTime(), location)
-
+        location = "REMOTE"
+    return format(name, tutor, getTime(), location)
     
-def format(lastNameFirstName, time, location):
+def format(lastNameFirstName, tutor, time, location):
     "Formats the title"
-    return (f'{lastNameFirstName}_EllieT_{getDate()}_{time}_{location}')
+    return (f'{lastNameFirstName}_{tutor}_{getDate()}_{time}_{location}')
 
 def getDate():
     "Returns today's date"
@@ -44,7 +45,4 @@ def getTime():
     else:
         printMinute = "00"
     return (f'{printHour}{printMinute}{meridian}')
-
-if __name__ == "__main__":
-    print(getInput())
 
